@@ -1,9 +1,10 @@
 <template>
     <main>
         <div class="container">
-            <div class="disk-card">
+            <div class="disk-card" v-if="disk.length > 0">
                 <DiskCard v-for="(card, index) in disk" :key="index" :card="card" />
             </div>
+            <Loader v-else />
         </div>
     </main>
 </template>
@@ -11,11 +12,13 @@
 <script>
 import axios from 'axios';
 import DiskCard from './DiskCard'
+import Loader from './Loader'
 
 export default {
   name: "Main",
   components: {
-    DiskCard
+    DiskCard,
+    Loader
     
   },
   data: function(){
@@ -36,7 +39,7 @@ main{
     width: 100%;
     height: auto;
     background-color:#1e2d3b ;
-    height: calc(100vh - 90px);
+    height: auto;
     .container{
         width: 70%;
         margin: auto;
