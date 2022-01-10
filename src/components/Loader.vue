@@ -1,8 +1,7 @@
 <template>
-    <div>
-        caricamento
-        
-    </div>
+  <div>
+    caricamento 
+  </div>
 </template>
 
 <script>
